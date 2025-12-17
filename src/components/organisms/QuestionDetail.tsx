@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Typography, Stack } from "@mui/material";
 import { QuestionMeta } from "@/components/molecules/QuestionsMeta";
-import { Question } from "@/app/types/question";
+import { Question } from "@/types/question";
 
 export const QuestionDetail = ({
   title,

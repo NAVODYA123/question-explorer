@@ -1,8 +1,8 @@
 "use client";
 
-import { useQuestions } from "@/app/hooks/useQuestions";
-import { useFilters } from "@/app/hooks/useFilters";
-import { filterQuestions } from "@/app/utils/filterQuestions";
+import { useQuestions } from "@/hooks/useQuestions";
+import { useFilters } from "@/hooks/useFilters";
+import { filterQuestions } from "@/utils/filterQuestions";
 import { LoadingSpinner } from "@/components/atoms/LoadingSpinner";
 import { QuestionListTemplate } from "@/components/template/QuestionListTemplate";
 

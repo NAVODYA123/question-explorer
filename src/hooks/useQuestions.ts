@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Papa from "papaparse";
-import { Question, CsvQuestion } from "@/app/types/question";
+import { Question, CsvQuestion } from "@/types/question";
 import { DifficultyLevel } from "../constatnts/DifficultyLevel";
 
 export function useQuestions() {

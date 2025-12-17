@@ -1,4 +1,4 @@
-import { CsvRow } from "@/app/types/csv";
+import { CsvRow } from "@/types/csv";
 
 interface CsvTableProps {
   data: CsvRow[];

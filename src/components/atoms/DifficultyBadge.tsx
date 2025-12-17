@@ -1,4 +1,4 @@
-import { DifficultyLevel } from "@/app/constatnts/DifficultyLevel";
+import { DifficultyLevel } from "@/constatnts/DifficultyLevel";
 import { Chip } from "@mui/material";
 
 type DifficultyConfig = {

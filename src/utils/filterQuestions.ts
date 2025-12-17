@@ -1,4 +1,4 @@
-import { Question } from "@/app/types/question";
+import { Question } from "@/types/question";
 import { filters } from "../types/filters";
 
 type FiterQuestionProps = {

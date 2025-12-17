@@ -2,7 +2,7 @@
 import { Autocomplete, Stack, TextField } from "@mui/material";
 import { SearchInput } from "../atoms/SearchInput";
 import { SelectInput } from "../atoms/SelectInput";
-import { useQuestions } from "@/app/hooks/useQuestions";
+import { useQuestions } from "@/hooks/useQuestions";
 
 export const FilterBar = ({ filters, setFilters }: any) => {
   const { companies, category } = useQuestions();

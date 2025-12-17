@@ -3,7 +3,7 @@ import { Card, CardContent } from "@mui/material";
 import Link from "next/link";
 import { QuestionHeader } from "@/components/molecules/QuestionsHeader";
 import { QuestionMeta } from "@/components/molecules/QuestionsMeta";
-import { Question } from "@/app/types/question";
+import { Question } from "@/types/question";
 import { QuestionBody } from "./QuestionBody";
 
 type QuestionCardProps = {
