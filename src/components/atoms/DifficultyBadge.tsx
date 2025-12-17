@@ -1,11 +1,26 @@
+import { DifficultyLevel } from '@/app/constatnts/DifficultyLevel'
 import { Chip } from '@mui/material'
 
-export function DifficultyBadge({ level }: { level: '1' | '2' | '3' }) {
-  const map = {
-    '1': { label: 'Easy', color: 'success' },
-    '2': { label: 'Medium', color: 'warning' },
-    '3': { label: 'Hard', color: 'error' },
-  } as const
+type DifficultyConfig = {
+  label: string
+  color: 'success' | 'warning' | 'error'
+}
 
-  return <Chip size="small" {...map[level]} />
+export const DifficultyBadge =({ level }: { level: DifficultyLevel }) => {
+ const map: Record<DifficultyLevel, DifficultyConfig> = {
+    [DifficultyLevel.EASY]: {
+      label: 'Easy',
+      color: 'success',
+    },
+    [DifficultyLevel.MEDIUM]: {
+      label: 'Medium',
+      color: 'warning',
+    },
+    [DifficultyLevel.HARD]: {
+      label: 'Hard',
+      color: 'error',
+    },
+  }
+
+    return <Chip size="small" label={map[level].label} color={map[level].color} />
 }
