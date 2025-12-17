@@ -1,30 +1,36 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { Question } from '@/app/types/question'
+import { Question } from "@/app/types/question";
+import { filters } from "../types/filters";
 
-export function filterQuestions(
-  questions: Question[],
-  filters: any
-): Question[] {
-  const result = questions.filter(q => {
+type FiterQuestionProps = {
+  questions: Question[];
+  filters: filters;
+};
+
+export const filterQuestions = ({
+  questions,
+  filters,
+}: FiterQuestionProps): Question[] => {
+  const result = questions.filter((q) => {
     if (
       filters.search &&
       !q.title.toLowerCase().includes(filters.search.toLowerCase())
     )
-      return false
+      return false;
 
-    if (filters.difficulty && q.difficulty !== filters.difficulty)
-      return false
+    if (filters.difficulty && q.difficulty !== filters.difficulty) return false;
 
-    return true
-  })
+    if (filters.company && q.company !== filters.company) return false;
 
-  if (filters.sort === 'votes') {
-    result.sort((a, b) => Number(b.votes) - Number(a.votes))
+    return true;
+  });
+
+  if (filters.sort === "votes") {
+    result.sort((a, b) => Number(b.votes) - Number(a.votes));
   }
 
-  if (filters.sort === 'difficulty') {
-    result.sort((a, b) => Number(a.difficulty) - Number(b.difficulty))
+  if (filters.sort === "difficulty") {
+    result.sort((a, b) => Number(a.difficulty) - Number(b.difficulty));
   }
 
-  return result
-}
+  return result;
+};

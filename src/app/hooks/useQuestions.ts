@@ -7,6 +7,7 @@ import { DifficultyLevel } from "../constatnts/DifficultyLevel";
 
 export function useQuestions() {
   const [questions, setQuestions] = useState<Question[]>([]);
+  const [companies, setCompanies] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ export function useQuestions() {
           skipEmptyLines: true,
         });
 
-        const mapped: Question[] = parsed.data
+        const questionData: Question[] = parsed.data
           .filter((row) => row.qid && row.title)
           .map((row) => ({
             id: row.qid,
@@ -29,12 +30,18 @@ export function useQuestions() {
             votes: row["sum(cu.vote)"],
             summary: row.question_summary,
           }));
-
-        setQuestions(mapped);
+        const uniqueCompanies = Array.from(
+          new Set(
+            questionData
+              .map((q) => q.company)
+              .filter((c): c is string => Boolean(c))
+          )
+        ).sort();
+        setQuestions(questionData);
+        setCompanies(uniqueCompanies);
         setLoading(false);
       });
   }, []);
 
-
-  return { questions, loading };
+  return { questions, loading, companies };
 }
