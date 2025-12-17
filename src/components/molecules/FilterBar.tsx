@@ -5,7 +5,7 @@ import { SelectInput } from "../atoms/SelectInput";
 import { useQuestions } from "@/app/hooks/useQuestions";
 
 export const FilterBar = ({ filters, setFilters }: any) => {
-  const { companies } = useQuestions();
+  const { companies, category } = useQuestions();
   return (
     <Stack direction="row" spacing={2} mb={3}>
       <SearchInput
@@ -28,8 +28,19 @@ export const FilterBar = ({ filters, setFilters }: any) => {
       />
       <Autocomplete
         disablePortal
+        options={category}
+        sx={{ width: 300 }}
+        size="small"
+        renderInput={(params) => <TextField {...params} label="Type" />}
+        onChange={(_, value) =>
+          setFilters((f: any) => ({ ...f, type: value || "" }))
+        }
+      />
+      <Autocomplete
+        disablePortal
         options={companies}
         sx={{ width: 300 }}
+        size="small"
         renderInput={(params) => <TextField {...params} label="Company" />}
         onChange={(_, value) =>
           setFilters((f: any) => ({ ...f, company: value || "" }))

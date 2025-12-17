@@ -8,6 +8,7 @@ import { DifficultyLevel } from "../constatnts/DifficultyLevel";
 export function useQuestions() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [companies, setCompanies] = useState<string[]>([]);
+  const [category, setCategory] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -37,11 +38,20 @@ export function useQuestions() {
               .filter((c): c is string => Boolean(c))
           )
         ).sort();
+
+        const questionCategory = Array.from(
+          new Set(
+            questionData
+              .map((q) => q.type)
+              .filter((c): c is string => Boolean(c))
+          )
+        ).sort();
         setQuestions(questionData);
         setCompanies(uniqueCompanies);
+        setCategory(questionCategory);
         setLoading(false);
       });
   }, []);
 
-  return { questions, loading, companies };
+  return { questions, loading, companies, category };
 }

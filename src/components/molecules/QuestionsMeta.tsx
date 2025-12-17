@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Chip, Stack, Typography } from "@mui/material";
 import { VoteCount } from "../atoms/VoteCount";
 
 type QuestionMetaProps = {
@@ -8,7 +8,7 @@ type QuestionMetaProps = {
 export const QuestionMeta = ({ questionMetaData }: QuestionMetaProps) => {
   return (
     <Stack direction="row" spacing={2} alignItems="center">
-      <Typography>{questionMetaData.type}</Typography>
+      <Chip label={questionMetaData.type} />
       <Typography>{questionMetaData.company}</Typography>
       <VoteCount votes={questionMetaData.votes} />
     </Stack>

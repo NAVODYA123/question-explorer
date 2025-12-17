@@ -21,6 +21,8 @@ export const filterQuestions = ({
 
     if (filters.company && q.company !== filters.company) return false;
 
+    if (filters.type && q.type !== filters.type) return false;
+
     return true;
   });
 
