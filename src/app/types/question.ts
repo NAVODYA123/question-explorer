@@ -9,3 +9,13 @@ export interface Question {
   votes: string
   summary: string
 }
+
+export type CsvQuestion = {
+  qid: string
+  title: string
+  difficulty: string
+  type: string
+  company_asked: string
+  'sum(cu.vote)': string
+  question_summary: string
+}
