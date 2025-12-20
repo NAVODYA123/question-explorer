@@ -1,31 +1,24 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { AppThemeProvider } from "@/provider/ThemeProvider";
+import { Box, Container } from "@mui/material";
+import { ReactNode } from "react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "Question Explorer",
-  description: "Created by Next.js and TypeScript",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body>
+        <AppThemeProvider>
+          <Box display="flex" minHeight="100vh" flexDirection="column">
+            <Header />
+
+            <Box component="main" flexGrow={1} py={3}>
+              <Container maxWidth="lg">{children}</Container>
+            </Box>
+
+            <Footer />
+          </Box>
+        </AppThemeProvider>
       </body>
     </html>
   );

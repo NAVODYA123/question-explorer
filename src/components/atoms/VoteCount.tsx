@@ -14,9 +14,9 @@ export const VoteCount = ({ votes }: { votes: string }) => {
       }}
     >
       {voteNumber >= 0 ? (
-        <ThumbUpIcon sx={{ color: "blue" }} />
+        <ThumbUpIcon sx={{ color: "primary.light" }} />
       ) : (
-        <ThumbDownIcon sx={{ color: "red" }} />
+        <ThumbDownIcon sx={{ color: "error.light" }} />
       )}
       <Typography> {votes} </Typography>
     </Box>
