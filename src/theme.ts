@@ -18,7 +18,7 @@ export const theme = createTheme({
     },
 
     success: {
-      light: green[200],
+      light: green[300],
       main: green[600],
       dark: green[800],
       contrastText: green[800],
