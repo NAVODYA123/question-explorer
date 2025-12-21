@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import { red } from "@mui/material/colors";
 
 export const Footer = () => {
   return (

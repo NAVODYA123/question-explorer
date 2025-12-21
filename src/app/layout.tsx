@@ -12,8 +12,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Box display="flex" minHeight="100vh" flexDirection="column">
             <Header />
 
-            <Box component="main" flexGrow={1} py={3}>
-              <Container maxWidth="lg">{children}</Container>
+            <Box
+              component="main"
+              flexGrow={1}
+              py={3}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
+              <Container sx={{ m: 0, maxWidth: "0" }}>{children}</Container>
             </Box>
 
             <Footer />

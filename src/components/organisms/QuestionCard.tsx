@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Card, CardContent } from "@mui/material";
 import Link from "next/link";
 import { QuestionHeader } from "@/components/molecules/QuestionsHeader";

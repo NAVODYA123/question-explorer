@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { SelectInput } from '../atoms/SelectInput'
+import { SelectInput } from "../atoms/SelectInput";
 
 export function SortBar({ sort, setSort }: any) {
   return (
@@ -8,9 +8,9 @@ export function SortBar({ sort, setSort }: any) {
       value={sort}
       onChange={setSort}
       options={[
-        { label: 'Votes', value: 'votes' },
-        { label: 'Difficulty', value: 'difficulty' },
+        { label: "Votes", value: "votes" },
+        { label: "Difficulty", value: "difficulty" },
       ]}
     />
-  )
+  );
 }

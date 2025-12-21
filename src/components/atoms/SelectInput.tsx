@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { TextField, MenuItem } from '@mui/material'
+import { TextField, MenuItem } from "@mui/material";
 
 export const SelectInput = ({ label, value, onChange, options }: any) => {
   return (
@@ -8,8 +8,8 @@ export const SelectInput = ({ label, value, onChange, options }: any) => {
       size="small"
       label={label}
       value={value}
-      onChange={e => onChange(e.target.value)}
-      sx={{width: 120}}
+      onChange={(e) => onChange(e.target.value)}
+      sx={{ width: 120 }}
     >
       {options.map((o: any) => (
         <MenuItem key={o.value} value={o.value}>
@@ -17,5 +17,5 @@ export const SelectInput = ({ label, value, onChange, options }: any) => {
         </MenuItem>
       ))}
     </TextField>
-  )
-}
+  );
+};
