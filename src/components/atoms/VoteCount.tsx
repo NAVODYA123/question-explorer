@@ -4,6 +4,7 @@ import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 
 export const VoteCount = ({ votes }: { votes: string }) => {
   const voteNumber = Number(votes);
+  const displayCount = Math.abs(voteNumber);
   return (
     <Box
       sx={{
@@ -18,7 +19,7 @@ export const VoteCount = ({ votes }: { votes: string }) => {
       ) : (
         <ThumbDownIcon sx={{ color: "error.light" }} />
       )}
-      <Typography> {votes} </Typography>
+      <Typography> {displayCount} </Typography>
     </Box>
   );
 };
