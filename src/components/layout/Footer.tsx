@@ -10,7 +10,7 @@ export const Footer = () => {
       sx={{ bgcolor: "primary.light", height: "50px", marginTop: "auto" }}
     >
       <Typography variant="body2">
-        © {new Date().getFullYear()} questions explorer app
+        © {new Date().getFullYear()} questions explorer app by Lihini
       </Typography>
     </Box>
   );
