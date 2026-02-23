@@ -11,31 +11,31 @@ export const theme = createTheme({
     },
 
     secondary: {
-      light: purple[300],
+      light: purple[200],
       main: purple[600],
       dark: purple[800],
       contrastText: "#fff",
     },
 
     success: {
-      light: green[300],
+      light: green[100],
       main: green[600],
       dark: green[800],
       contrastText: green[800],
     },
 
     warning: {
-      light: orange[300],
+      light: orange[100],
       main: orange[600],
       dark: orange[800],
-      contrastText: "#000",
+      contrastText: orange[800],
     },
 
     error: {
-      light: red[300],
+      light: red[100],
       main: red[600],
       dark: red[800],
-      contrastText: "rgba(${main},0.68",
+      contrastText: red[800],
     },
 
     background: {

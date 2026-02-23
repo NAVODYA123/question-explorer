@@ -12,7 +12,16 @@ type QuestionCardProps = {
 export function QuestionCard({ q }: QuestionCardProps) {
   return (
     <Link href={`/questions/${q.id}`} style={{ textDecoration: "none" }}>
-      <Card variant="outlined" sx={{ mb: 2 }}>
+      <Card
+        variant="outlined"
+        elevation={5}
+        sx={{
+          mb: 2,
+          borderRadius: 2,
+          backgroundColor: "#fafafa",
+          boxShadow: "0px 4px 20px rgba(0,0,0,0.1)", // soft paper shadow
+        }}
+      >
         <CardContent>
           <QuestionHeader title={q.title} difficulty={q.difficulty} />
           <QuestionBody question={q.summary} />

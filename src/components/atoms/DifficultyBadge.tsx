@@ -12,22 +12,23 @@ export const DifficultyBadge = ({ level }: { level: DifficultyLevel }) => {
     [DifficultyLevel.EASY]: {
       label: "Easy",
       color: "success.light",
-      textColor: "#003300",
+      textColor: "success.contrastText",
     },
     [DifficultyLevel.MEDIUM]: {
       label: "Medium",
       color: "warning.light",
-      textColor: "#663300",
+      textColor: "warning.contrastText",
     },
     [DifficultyLevel.HARD]: {
       label: "Hard",
       color: "error.light",
-      textColor: "#660000",
+      textColor: "error.contrastText",
     },
   };
 
   return (
     <Chip
+      variant="outlined"
       size="medium"
       label={map[level].label}
       // color={map[level].color}
@@ -35,6 +36,8 @@ export const DifficultyBadge = ({ level }: { level: DifficultyLevel }) => {
         width: 80,
         backgroundColor: map[level].color,
         color: map[level].textColor,
+        borderRadius: "16px",
+        borderColor: map[level].textColor,
         "& .MuiChip-label": {
           fontSize: "14px",
           fontWeight: 700,
